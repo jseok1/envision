@@ -5,7 +5,8 @@ import App from './App'
 import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
+  // disable strict mode temporarily to avoid making duplicate API calls
+  // <React.StrictMode>
     <Router>
       <Routes>
         {/* Route for /abc */}
@@ -15,5 +16,5 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="*" element={<App />} />
       </Routes>
     </Router>
-  </React.StrictMode>
+  // </React.StrictMode>
 )

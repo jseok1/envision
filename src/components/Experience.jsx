@@ -49,6 +49,14 @@ function GoogleTiles({ apiUrl, ModelRef, lat, long, indicies }) {
     return <ModelPlaceholder ModelRef={ModelRef} />;
   }
 
+  const a = document.createElement("a");
+  a.href = glbUrl;
+  a.download = glbUrl.split("/").pop() + ".glb";
+  console.log(glbUrl)
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+
   const { scene, nodes, materials } = useGLTF(glbUrl);
   console.log("Loaded GLTF Nodes:", nodes);
   console.log("Loaded GLTF Materials:", materials);
